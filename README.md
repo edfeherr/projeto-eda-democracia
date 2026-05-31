@@ -575,10 +575,14 @@ Etapas concluídas:
 - disponibilização dos dados brutos em Google Drive público;
 - preenchimento do `requirements.txt`;
 - carregamento e validação da base CESOP (2.000 registros, 27 variáveis);
-- carregamento e validação da base TSE (~2.3 GB, colunas selecionadas);
-- limpeza e recodificação das variáveis CESOP (value labels, NaN, variáveis derivadas);
-- criação de agregações TSE por UF e por perfil demográfico;
-- salvamento das bases tratadas em parquet (`data/processed/`).
+- carregamento e validação da base TSE (~2.3 GB, 10 colunas selecionadas via `usecols=`, encoding `latin1`);
+- limpeza e recodificação das variáveis CESOP (value labels, NaN, variáveis derivadas: `ESCOL_GRUPO`, `RENDA_GRUPO`);
+- limpeza da base TSE (remoção de linhas com `QT_APTOS=0`, padronização de strings, conversão para `category`);
+- criação de variáveis derivadas TSE (`TAXA_COMPARECIMENTO`, `TAXA_ABSTENCAO`, `REGIAO`);
+- criação de agregações TSE por UF (`tse_uf`) e por perfil demográfico nacional (`tse_perfil`);
+- validação das taxas TSE (intervalo [0, 1] verificado);
+- salvamento das bases tratadas em parquet (`data/processed/`): `cesop_clean`, `tse_clean`, `tse_uf`, `tse_perfil`;
+- revisão e simplificação do dicionário de dados TSE (`references/data_dictionary_tse.md`).
 
 Próximas etapas:
 
