@@ -1,0 +1,4 @@
+pandas
+numpy
+pyreadstat
+pyarrow>=18,<19
