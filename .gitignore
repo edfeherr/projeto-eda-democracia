@@ -17,6 +17,13 @@ Thumbs.db
 *.tmp
 *.log
 
+# Arquivos internos de planejamento (não versionados)
+CLAUDE.md
+PRD.md
+passo_a_passo.md
+prompt-claude.md
+notebooks/teste.ipynb
+
 # Dados brutos e processados
 data/raw/
 data/processed/

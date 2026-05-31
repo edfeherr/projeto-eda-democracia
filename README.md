@@ -160,7 +160,7 @@ Projeto_EDA_Democracia/
 │   └── 03_eda_democracia.ipynb
 │
 ├── references/
-│   ├── data_dictionary.md
+│   ├── data_dictionary_cesop.md
 │   └── data_dictionary_tse.md
 │
 ├── reports/
@@ -212,9 +212,9 @@ Contém os notebooks Jupyter utilizados no desenvolvimento do projeto.
 
 Sugestão de organização:
 
-- `01_exploracao_base.ipynb`: leitura e validação inicial das bases;
-- `02_tratamento_dados.ipynb`: limpeza, recodificação e preparação das variáveis;
-- `03_eda_democracia.ipynb`: análise exploratória principal e geração de gráficos.
+- `01_exploracao_base.ipynb`: carregamento, limpeza, recodificação e salvamento das bases CESOP e TSE em parquet ✅;
+- `02_tratamento_dados.ipynb`: análises exploratórias unidimensionais e bivariadas (em desenvolvimento);
+- `03_eda_democracia.ipynb`: análise principal com cruzamento CESOP × TSE (em desenvolvimento).
 
 ---
 
@@ -224,7 +224,7 @@ Contém documentos auxiliares do projeto, como dicionários de dados e descriç�
 
 Arquivos principais:
 
-- `data_dictionary.md`: dicionário de dados da base CESOP;
+- `data_dictionary_cesop.md`: dicionário de dados da base CESOP;
 - `data_dictionary_tse.md`: dicionário de dados da base TSE.
 
 ---
@@ -355,7 +355,7 @@ import pandas as pd
 df_tse = pd.read_csv(
     "../data/raw/tse/perfil_comparecimento_abstencao_2022/perfil_comparecimento_abstencao_2022_BRASIL.csv",
     sep=";",
-    encoding="latin1"
+    encoding="utf-8"
 )
 ```
 
@@ -454,7 +454,7 @@ Os dicionários de dados do projeto estão disponíveis na pasta `references/`.
 Arquivo:
 
 ```text
-references/data_dictionary.md
+references/data_dictionary_cesop.md
 ```
 
 Contém:
@@ -550,9 +550,10 @@ As decisões metodológicas, análises finais e conclusões devem ser revisadas 
 - Bibliotecas Python utilizadas no projeto:
   - pandas;
   - numpy;
+  - pyreadstat;
+  - pyarrow;
   - matplotlib;
-  - seaborn;
-  - pyreadstat.
+  - seaborn.
 
 ---
 
@@ -569,16 +570,22 @@ Etapas concluídas:
 - definição do tema;
 - organização inicial do repositório;
 - criação do ambiente virtual;
-- documentação das bases;
+- documentação das bases (dicionários CESOP e TSE);
 - versionamento no GitHub;
-- disponibilização dos dados brutos em Google Drive público.
+- disponibilização dos dados brutos em Google Drive público;
+- preenchimento do `requirements.txt`;
+- carregamento e validação da base CESOP (2.000 registros, 27 variáveis);
+- carregamento e validação da base TSE (~2.3 GB, colunas selecionadas);
+- limpeza e recodificação das variáveis CESOP (value labels, NaN, variáveis derivadas);
+- criação de agregações TSE por UF e por perfil demográfico;
+- salvamento das bases tratadas em parquet (`data/processed/`).
 
 Próximas etapas:
 
-- validação da leitura da base CESOP;
-- validação da leitura da base TSE;
-- tratamento e recodificação das variáveis;
-- análise exploratória inicial;
-- agregação dos dados do TSE por região;
-- cruzamento entre CESOP e TSE;
-- construção dos gráficos e conclusões.
+- análises exploratórias unidimensionais (perfil dos respondentes);
+- análises bivariadas (cruzamentos por escolaridade, renda, região);
+- cruzamento CESOP × TSE (disposição declarada vs. comparecimento real);
+- testes estatísticos (qui-quadrado, correlação de Spearman);
+- construção dos gráficos e conclusões;
+- elaboração do relatório e slides;
+- gravação do vídeo de apresentação.
