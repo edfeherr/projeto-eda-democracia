@@ -355,7 +355,7 @@ import pandas as pd
 df_tse = pd.read_csv(
     "../data/raw/tse/perfil_comparecimento_abstencao_2022/perfil_comparecimento_abstencao_2022_BRASIL.csv",
     sep=";",
-    encoding="utf-8"
+    encoding="latin1"
 )
 ```
 

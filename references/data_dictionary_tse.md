@@ -1,369 +1,133 @@
-# Data Dictionary — TSE: Comparecimento e Abstenção 2022
+# Dicionário de Dados — TSE: Comparecimento e Abstenção 2022
 
-## 1. Visão Geral
+## Como carregar a base
 
-Este documento descreve as variáveis do dataset público do **Tribunal Superior Eleitoral (TSE)** referente ao tema **Comparecimento e Abstenção — Eleições 2022**.
+```python
+colunas_tse = [
+    'SG_UF', 'NM_MUNICIPIO',
+    'DS_GENERO', 'DS_ESTADO_CIVIL',
+    'DS_FAIXA_ETARIA', 'DS_GRAU_ESCOLARIDADE', 'DS_COR_RACA',
+    'QT_APTOS', 'QT_COMPARECIMENTO', 'QT_ABSTENCAO',
+]
 
-O objetivo deste dicionário é apoiar o projeto de EDA sobre **Percepção dos Brasileiros acerca da Democracia**.
+df_tse = pd.read_csv(
+    PATH_TSE_CSV,
+    sep=';',
+    encoding='latin1',
+    usecols=colunas_tse,
+)
+```
 
----
-
-## 2. Uso no Projeto
-
-A base do TSE será utilizada como **base pública complementar** à pesquisa do CESOP.
-
-A principal hipótese de integração é comparar indicadores declarados de participação política na pesquisa CESOP com indicadores eleitorais observados no TSE.
-
----
-
-## 3. Variáveis Administrativas
-
-### DT_GERACAO
-
-**Descrição:** Data da extração dos dados para geração do arquivo.
-
-
----
-
-### HH_GERACAO
-
-**Descrição:** Hora da extração dos dados para geração do arquivo, com base no horário de Brasília.
+**Arquivo:** `perfil_comparecimento_abstencao_2022_BRASIL.csv`  
+**Separador:** `;`  
+**Encoding:** `latin1`  
+**Total de colunas no arquivo original:** 43 — carregamos apenas as 10 necessárias via `usecols=`.
 
 ---
 
-### ANO_ELEICAO
-
-**Descrição:** Ano de referência da eleição para geração do arquivo.
-
----
-
-### NR_TURNO
-
-**Descrição:** Número do turno da eleição.
-
-| Código | Significado |
-|---:|---|
-| 1 | Primeiro turno |
-| 2 | Segundo turno |
-
----
-
-## 4. Variáveis Geográficas
+## Colunas utilizadas
 
 ### SG_UF
 
-**Descrição:** Sigla da unidade da federação onde ocorreu a eleição.
+Sigla da unidade da federação.
 
----
-
-### CD_MUNICIPIO
-
-**Descrição:** Código TSE do município onde ocorreu a eleição.
+Exemplos: `AC`, `AL`, `AM`, `AP`, `BA`, `CE`, `DF`, `ES`, `GO`, `MA`, `MG`, `MS`, `MT`, `PA`, `PB`, `PE`, `PI`, `PR`, `RJ`, `RN`, `RO`, `RR`, `RS`, `SC`, `SE`, `SP`, `TO`.
 
 ---
 
 ### NM_MUNICIPIO
 
-**Descrição:** Nome do município onde ocorreu a eleição.
+Nome do município.
 
----
-
-### NR_ZONA
-
-**Descrição:** Número da zona eleitoral em que ocorreu a eleição.
-
----
-
-## 5. Variáveis de Gênero
-
-### CD_GENERO
-
-**Descrição:** Código do gênero da eleitora ou eleitor.
-
-| TSE `CD_GENERO` | TSE `DS_GENERO` | 
-|---:|---|
-| 2 | Masculino |
-| 4 | Feminino | 
+Exemplos: `ABADIA DE GOIÁS`, `ABADIA DOS DOURADOS`, `ABADIÂNIA`.
 
 ---
 
 ### DS_GENERO
 
-**Descrição:** Descrição do gênero da eleitora ou eleitor.
+Gênero do eleitor ou eleitora.
 
----
-
-## 6. Variáveis de Estado Civil
-
-### CD_ESTADO_CIVIL
-
-**Descrição:** Código do estado civil da eleitora ou eleitor.
-
-| Código | Valor |
-|---:|---|
-| 1 | Solteiro(a) |
-| 3 | Casado(a) |
-| 5 | Viúvo(a) |
-| 7 | Separado(a) judicialmente |
-| 9 | Divorciado(a) |
+| Valor |
+|-------|
+| `MASCULINO` |
+| `FEMININO` |
 
 ---
 
 ### DS_ESTADO_CIVIL
 
-**Descrição:** Descrição do estado civil da eleitora ou eleitor.
+Estado civil do eleitor ou eleitora.
 
----
-
-## 7. Variáveis de Faixa Etária
-
-### CD_FAIXA_ETARIA
-
-**Descrição:** Código da faixa etária da eleitora ou eleitor.
+| Valor |
+|-------|
+| `SOLTEIRO` |
+| `CASADO` |
+| `VIÚVO` |
+| `SEPARADO JUDICIALMENTE` |
+| `DIVORCIADO` |
 
 ---
 
 ### DS_FAIXA_ETARIA
- 
-**Descrição:** Descrição da faixa etária da eleitora ou eleitor.
+
+Faixa etária do eleitor ou eleitora. Os valores são idades individuais em anos.
+
+Exemplos: `16 anos`, `17 anos`, `18 anos`, `19 anos`, ..., `70 anos`.
 
 ---
 
-## 8. Variáveis de Grau de Instrução
+### DS_GRAU_ESCOLARIDADE
 
-### CD_GRAU_INSTRUCAO
+Grau de escolaridade do eleitor ou eleitora.
 
-**Descrição:** Código do grau de instrução da eleitora ou eleitor.
-
-| Código | Valor |
-|---:|---|
-| 1 | Analfabeto |
-| 2 | Lê e escreve |
-| 3 | Ensino fundamental incompleto |
-| 4 | Ensino fundamental completo |
-| 5 | Ensino médio incompleto |
-| 6 | Ensino médio completo |
-| 7 | Superior incompleto |
-| 8 | Superior completo |
-
----
-
-### DS_GRAU_INSTRUCAO
-
-**Descrição:** Descrição do grau de instrução da eleitora ou eleitor.
-
----
-
-## 9. Variáveis de Raça/Cor
-
-### CD_COR_RACA
-
-**Descrição:** Código da raça/cor da eleitora ou eleitor.
-
-| Código | Valor |
-|---:|---|
-| 1 | Branca |
-| 2 | Preta |
-| 3 | Parda |
-| 4 | Amarela |
-| 5 | Indígena |
-| 6 | Não informado |
+| Valor |
+|-------|
+| `ANALFABETO` |
+| `LÊ E ESCREVE` |
+| `ENSINO FUNDAMENTAL INCOMPLETO` |
+| `ENSINO FUNDAMENTAL COMPLETO` |
+| `ENSINO MÉDIO INCOMPLETO` |
+| `ENSINO MÉDIO COMPLETO` |
+| `SUPERIOR INCOMPLETO` |
+| `SUPERIOR COMPLETO` |
 
 ---
 
 ### DS_COR_RACA
 
-**Descrição:** Descrição da raça/cor da eleitora ou eleitor.
+Raça/cor do eleitor ou eleitora.
+
+| Valor |
+|-------|
+| `BRANCA` |
+| `PRETA` |
+| `PARDA` |
+| `AMARELA` |
+| `INDÍGENA` |
+| `NÃO INFORMADO` |
 
 ---
-
-## 10. Variáveis de Populações Específicas
-
-### CD_QUILOMBOLA
-
-**Descrição:** Código que indica se a eleitora ou o eleitor é de origem de grupo quilombola.
-
-| Código | Valor |
-|---:|---|
-| 1 | Sim |
-| 2 | Não |
-
----
-
-### DS_QUILOMBOLA
-
-**Descrição:** Indica se a eleitora ou o eleitor é de origem de grupo quilombola.
-
----
-
-### CD_INTERPRETE_LIBRAS
-
-**Descrição:** Código que indica se a eleitora ou o eleitor é intérprete de Libras.
-
-| Código | Valor |
-|---:|---|
-| 1 | Sim |
-| 2 | Não |
-
----
-
-### DS_INTERPRETE_LIBRAS
-
-**Descrição:** Indica se a eleitora ou o eleitor é intérprete de Libras.
-
----
-
-### CD_IDENTIDADE_GENERO
-  
-**Descrição:** Código do gênero ao qual a eleitora ou eleitor se identifica.
-
-| Código | Valor |
-|---:|---|
-| 1 | Cisgênero |
-| 2 | Transgênero |
-| 3 | Prefere não informar |
-| -1 | Não informado |
-
----
-
-### DS_IDENTIDADE_GENERO
-
-**Descrição:** Descrição do gênero ao qual a eleitora ou eleitor se identifica.
-
----
-
-### CD_IDIOMA_INDIGENA
-  
-**Descrição:** Código que indica se a eleitora ou eleitor domina alguma língua indígena.
-
-| Código | Valor |
-|---:|---|
-| 1 | Sim |
-| 2 | Não |
-
----
-
-### DS_IDIOMA_INDIGENA
-
-**Descrição:** Indica se a eleitora ou eleitor domina alguma língua indígena.
-
----
-
-### CD_GRUPO_INDIGENA
- 
-**Descrição:** Código da etnia, povo ou grupo indígena ao qual a eleitora ou eleitor pertence.
-
----
-
-### DS_GRUPO_INDIGENA
-
-**Descrição:** Descrição da etnia, povo ou grupo indígena ao qual a eleitora ou eleitor pertence.
-
----
-
-### CD_IDIOMA_QUILOMBOLA
-
-**Descrição:** Código que indica se a eleitora ou eleitor domina alguma língua quilombola.
-
-| Código | Valor |
-|---:|---|
-| 1 | Sim |
-| 2 | Não |
-
----
-
-### DS_IDIOMA_QUILOMBOLA
-
-**Descrição:** Indica se a eleitora ou eleitor domina alguma língua quilombola.
-
----
-
-## 11. Variáveis de Comparecimento e Abstenção
 
 ### QT_APTOS
- 
-**Descrição:** Quantidade de eleitoras ou eleitores aptos a votar.
+
+Quantidade de eleitores aptos a votar no grupo (combinação de município + zona + perfil demográfico).
+
+Tipo: inteiro.
 
 ---
 
 ### QT_COMPARECIMENTO
 
-**Descrição:** Quantidade de eleitoras ou eleitores aptos que compareceram para votar.
+Quantidade de eleitores aptos que compareceram para votar.
+
+Tipo: inteiro.
 
 ---
 
 ### QT_ABSTENCAO
 
-**Descrição:** Quantidade de eleitoras ou eleitores aptos que não compareceram para votar.
+Quantidade de eleitores aptos que não compareceram para votar.
 
----
+Tipo: inteiro.
 
-### QT_COMPAREC_DEFICIENTES
 
-**Descrição:** Quantidade de eleitoras ou eleitores aptos, com deficiência ou mobilidade reduzida, que compareceram para votar, conforme o perfil.
-
----
-
-### QT_ABST_DEFICIENTES
-
-**Descrição:** Quantidade de eleitoras ou eleitores aptos, com deficiência ou mobilidade reduzida, que não compareceram para votar, conforme o perfil.
-
----
-
-### QT_COMPAREC_TTE
- 
-**Descrição:** Quantidade de eleitoras ou eleitores aptos que solicitaram transferência temporária de eleitor (TTE) e compareceram para votar.
-
----
-
-### QT_ABST_TTE
-  
-**Descrição:** Quantidade de eleitoras ou eleitores aptos que solicitaram transferência temporária de eleitor (TTE) e não compareceram para votar.
-
----
-
-### QT_COMPAREC_FACULTATIVO
-
-**Descrição:** Quantidade de eleitoras ou eleitores com voto facultativo que compareceram para votar.
-
----
-
-### QT_ABST_FACULTATIVO
-
-**Descrição:** Quantidade de eleitoras ou eleitores com voto facultativo que não compareceram para votar.
-
----
-
-### QT_COMPAREC_OBRIGATORIO
-
-**Descrição:** Quantidade de eleitoras ou eleitores com voto obrigatório que compareceram para votar.
-
----
-
-### QT_ABST_OBRIGATORIO
-
-**Descrição:** Quantidade de eleitoras ou eleitores com voto obrigatório que não compareceram para votar.
-
----
-
-### QT_COMPAREC_DEFIC_FACULTATIVO
-
-**Descrição:** Quantidade de eleitoras ou eleitores aptos, com deficiência ou mobilidade reduzida, com voto facultativo e que compareceram para votar, conforme o perfil.
-
----
-
-### QT_ABST_DEFIC_FACULTATIVO
- 
-**Descrição:** Quantidade de eleitoras ou eleitores aptos, com deficiência ou mobilidade reduzida, com voto facultativo e que não compareceram para votar, conforme o perfil.
-
----
-
-### QT_COMPAREC_DEFIC_OBRIGATORIO
-
-**Descrição:** Quantidade de eleitoras ou eleitores aptos, com deficiência ou mobilidade reduzida, com voto obrigatório e que compareceram para votar, conforme o perfil.
-
----
-
-### QT_ABST_DEFIC_OBRIGATORIO
- 
-**Descrição:** Quantidade de eleitoras ou eleitores aptos, com deficiência ou mobilidade reduzida, com voto obrigatório e que não compareceram para votar, conforme o perfil.
