@@ -4,3 +4,4 @@ pyreadstat
 pyarrow>=18,<19
 matplotlib
 seaborn
+statsmodels

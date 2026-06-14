@@ -411,12 +411,11 @@ monetária**.
 
 Em conformidade com as diretrizes do projeto, declara-se o uso de **assistência de IA**
 (modelo de linguagem, via Claude Code) nas seguintes etapas: estruturação e revisão do
-código do notebook, padronização das visualizações, redação e organização deste relatório
-e verificação de consistência entre os achados e as saídas geradas. **Todas as decisões
-analíticas, a seleção das séries, a especificação do modelo ARIMA, a interpretação dos
-resultados e a validação final foram conduzidas e revisadas pelos autores.** Os valores
-numéricos relatados foram extraídos diretamente das saídas e gráficos produzidos pelo
-próprio notebook do projeto.
+código dos notebooks, padronização das visualizações, redação e organização deste
+relatório. **Todas as
+decisões analíticas, a seleção das bases, a interpretação dos resultados e a validação
+final foram conduzidas e revisadas pelos autores.** Os valores numéricos relatados foram
+extraídos das análises e figuras produzidas pelos próprios notebooks do projeto.
 
 ---
 
