@@ -1,4 +1,4 @@
-# Apresentação — Percepção dos Brasileiros Acerca da Democracia
+# Apresentação — Projeto EDA: Parte A (Democracia) e Parte B (Inadimplência PF)
 ### Roteiro de slides (limite: 5 minutos)
 
 > **Como usar este arquivo:** cada bloco separado por `---` é um slide. Os tópicos em
@@ -6,51 +6,60 @@
 > fala (não vai na tela). O tempo sugerido por slide soma ~5 min. Mantenha os slides
 > enxutos — fale os detalhes, não os escreva.
 
-**Orçamento de tempo (10 slides ≈ 5 min):**
+**Orçamento de tempo (13 slides ≈ 5 min):**
 
-| # | Slide | Tempo |
-|---|-------|:---:|
-| 1 | Capa | 0:15 |
-| 2 | A pergunta | 0:30 |
-| 3 | Dados e método | 0:40 |
-| 4 | O que os brasileiros declaram | 0:45 |
-| 5 | O comportamento real (TSE) | 0:35 |
-| 6 | 🎯 Escolaridade alinha (ρ = 1,00) | 0:45 |
-| 7 | 🎯 Região dissocia (ρ = −0,30) | 0:40 |
-| 8 | Idade: o U-invertido | 0:25 |
-| 9 | Conclusão | 0:35 |
-| 10 | Limitações + encerramento | 0:20 |
+| # | Slide | Bloco | Tempo |
+|---|-------|-------|:---:|
+| 1 | Capa | — | 0:10 |
+| 2 | Duas perguntas, um fio condutor | — | 0:20 |
+| 3 | Dados e método (Parte A) | A | 0:25 |
+| 4 | O que os brasileiros declaram | A | 0:30 |
+| 5 | O comportamento real (TSE) | A | 0:25 |
+| 6 | 🎯 Escolaridade alinha (ρ = 1,00) | A | 0:30 |
+| 7 | 🎯 Região dissocia (ρ = −0,30) | A | 0:25 |
+| 8 | Conclusão — Parte A | A | 0:20 |
+| 9 | Dados e método (Parte B) | B | 0:25 |
+| 10 | Evolução histórica e sazonalidade | B | 0:30 |
+| 11 | 🎯 O efeito defasado da Selic | B | 0:30 |
+| 12 | ARIMA: o que vem pela frente | B | 0:25 |
+| 13 | Conclusão geral + encerramento | — | 0:25 |
+
+**Total: 5:00**
 
 ---
 
-## Slide 1 — Capa (0:15)
+## Slide 1 — Capa (0:10)
 
-# Percepção dos Brasileiros Acerca da Democracia
-### Opinião declarada (CESOP) × comportamento eleitoral real (TSE 2022)
+# Projeto EDA — Ciência de Dados
+### Parte A: Percepção dos Brasileiros Acerca da Democracia
+### Parte B: Inadimplência de Pessoas Físicas no Brasil
 
-- Projeto I — EDA | Ciência de Dados | IMT
+- Projeto I — EDA | IMT
 - *[Nomes dos integrantes do grupo]*
 
-🎤 **Narração:** *"Nosso projeto cruza o que os brasileiros **dizem** sobre política com
-o que eles **fazem** nas urnas — opinião declarada versus comportamento real."*
+🎤 **Narração:** *"Nosso projeto tem duas frentes: na Parte A, cruzamos o que os
+brasileiros dizem sobre democracia com o que fazem nas urnas; na Parte B, analisamos a
+inadimplência das famílias e sua relação com os juros. As duas se conectam por um mesmo
+fio: o comportamento real das famílias brasileiras."*
 
 ---
 
-## Slide 2 — A pergunta (0:30)
+## Slide 2 — Duas perguntas, um fio condutor (0:20)
 
-### O voto obrigatório esconde o engajamento real?
+### O que declaramos × o que fazemos
 
-- No Brasil, votar é **obrigação legal** para a maioria.
-- **Pergunta norteadora:** grupos que votam mais também **querem** participar mais da
-  política? Onde percepção e comportamento se **alinham** — ou **divergem**?
+- **Parte A:** grupos que votam mais também **querem** participar mais da política?
+- **Parte B:** a inadimplência reage **na hora** aos juros, ou existe um **atraso**?
+- Em ambos os casos: **percepção/decisão declarada vs. comportamento real ao longo do
+  tempo**
 
-🎤 **Narração:** *"Como o voto é obrigatório, alto comparecimento não prova interesse.
-Queríamos saber: disposição declarada e participação real andam juntas? E em quais
-dimensões — região, escolaridade, idade — elas se separam?"*
+🎤 **Narração:** *"As duas partes investigam o mesmo tipo de pergunta: existe uma diferença
+entre o que se espera — vontade política, reação imediata aos juros — e o que
+efetivamente acontece? Vamos começar pela Parte A."*
 
 ---
 
-## Slide 3 — Dados e método (0:40)
+## Slide 3 — Dados e método (Parte A) (0:25)
 
 ### Duas bases, uma ponte
 
@@ -69,7 +78,7 @@ escolaridade e idade, e medimos a associação com a correlação de Spearman."*
 
 ---
 
-## Slide 4 — O que os brasileiros declaram (0:45)
+## Slide 4 — O que os brasileiros declaram (0:30)
 
 ### Quatro retratos da pesquisa (CESOP)
 
@@ -87,7 +96,7 @@ forte — 78% não têm nenhuma vontade de participar. O retrato é de baixo eng
 
 ---
 
-## Slide 5 — O comportamento real (TSE 2022) (0:35)
+## Slide 5 — O comportamento real (TSE 2022) (0:25)
 
 ### Quem comparece? A escolaridade separa
 
@@ -103,7 +112,7 @@ Primeira pista de que o eixo estruturante é a escolaridade."*
 
 ---
 
-## Slide 6 — 🎯 Núcleo: escolaridade ALINHA (0:45)
+## Slide 6 — 🎯 Núcleo A: escolaridade ALINHA (0:30)
 
 ### Percepção e comportamento sobem juntos — ρ = 1,00
 
@@ -114,14 +123,13 @@ Primeira pista de que o eixo estruturante é a escolaridade."*
 
 > *Figura sugerida:* `reports/imagens/07_cruz_vontade_comparecimento_escolaridade.png`
 
-🎤 **Narração:** *"Aqui está o achado central. Por escolaridade, as duas bases concordam
-perfeitamente: quanto mais escolaridade, mais a pessoa vota **e** mais quer participar.
-Correlação de 1,00. E a renda mostra exatamente o mesmo padrão — o que reforça o
-resultado."*
+🎤 **Narração:** *"Aqui está o achado central da Parte A. Por escolaridade, as duas bases
+concordam perfeitamente: quanto mais escolaridade, mais a pessoa vota e mais quer
+participar. Correlação de 1,00. E a renda mostra exatamente o mesmo padrão."*
 
 ---
 
-## Slide 7 — 🎯 Núcleo: região DISSOCIA (0:40)
+## Slide 7 — 🎯 Núcleo A: região DISSOCIA (0:25)
 
 ### Por região, percepção e comportamento se OPÕEM — ρ = −0,30
 
@@ -133,26 +141,12 @@ resultado."*
 > *Figura sugerida:* `reports/imagens/07_cruz_vontade_comparecimento_regiao.png`
 
 🎤 **Narração:** *"Já pela região, o resultado se inverte: correlação negativa. O Sul vota
-muito mas é o que menos quer participar; o Norte é o oposto. Ou seja, geografia confunde —
+muito mas é o que menos quer participar; o Norte é o oposto. Geografia confunde —
 comparecer não é o mesmo que se engajar."*
 
 ---
 
-## Slide 8 — Idade: o U-invertido (0:25)
-
-### Engajamento concentrado na meia-idade
-
-- Sobe até **35–54 anos**, cai nas **duas pontas**
-- Jovens 16–17: **comparecem (~83%)** mas sem interesse (~9%) → voto facultativo
-- Idosos 65+: caem nas **duas** medidas
-
-🎤 **Narração:** *"A idade é um segundo eixo: o engajamento forma um U-invertido — pico na
-meia-idade e queda nos extremos. Jovens votam por facultatividade, sem interesse; idosos
-recuam nas duas pontas."*
-
----
-
-## Slide 9 — Conclusão (0:35)
+## Slide 8 — Conclusão Parte A (0:20)
 
 ### É a escolaridade — não a região — que organiza o engajamento
 
@@ -160,34 +154,106 @@ recuam nas duas pontas."*
 - O brasileiro retratado **comparece** (79,4%), mas **não quer participar** e **não lembra**
   do voto → quer **resultados** mais que **tomar parte**
 
-🎤 **Narração:** *"A tese do trabalho: no Brasil, é a escolaridade que organiza o
-engajamento político — o único eixo em que o que se diz e o que se faz coincidem. O
-eleitorado comparece, mas em sua maioria não deseja participar: quer resultados, não
-processo."*
+🎤 **Narração:** *"Resumindo a Parte A: no Brasil, é a escolaridade que organiza o
+engajamento político — o único eixo em que o que se diz e o que se faz coincidem. Agora,
+vamos para a Parte B, onde também buscamos uma defasagem entre decisão e efeito — só que
+no crédito."*
 
 ---
 
-## Slide 10 — Limitações e encerramento (0:20)
+## Slide 9 — Dados e método (Parte B) (0:25)
 
-### Honestidade metodológica
+### Série temporal direto da fonte oficial
 
-- **Comparação ecológica:** as bases não medem os mesmos indivíduos (sem conclusão
-  individual)
-- **Viés amostral:** a CESOP super-representa os mais escolarizados → engajamento real
-  tende a ser **ainda menor**
+- **Fonte:** API do **Banco Central (SGS)** — séries em tempo real
+  - Inadimplência PF (21082), Selic (4390), Câmbio/Dólar (3695)
+- **Período:** mar/2011 a abr/2026 — **182 observações mensais**
+- **Técnicas:** decomposição aditiva, correlação com *lags* de 3 e 6 meses, teste **ADF**
+  (estacionariedade), modelo **ARIMA(1,1,1)**
+
+🎤 **Narração:** *"Na Parte B, coletamos direto da API do Banco Central três séries
+mensais desde 2011: a inadimplência das famílias, a Selic e o dólar. Com 182 meses de
+dados, decompomos a série, testamos correlações com defasagem e ajustamos um modelo
+ARIMA para projeção."*
+
+---
+
+## Slide 10 — Evolução histórica e sazonalidade (0:30)
+
+### Ciclos macroeconômicos + calendário das famílias
+
+- **Ciclos:** alta na crise 2015–2017, queda 2018–2020, **queda atípica na pandemia**
+  (auxílios/renegociações), **pico histórico em 2026**
+- **Sazonalidade mensal:**
+  - Pico de estresse: **abril (3,31%) e maio (3,29%)** — "ressaca" de IPVA/IPTU/material
+    escolar
+  - Alívio: **dezembro (3,09%)** — efeito do **13º salário**
+
+> *Figura sugerida:* gráfico de decomposição / boxplot mensal gerado em
+> `notebooks/03_parte_b.ipynb`
+
+🎤 **Narração:** *"A inadimplência segue os grandes ciclos econômicos do país — inclusive
+uma queda contraintuitiva na pandemia, por causa dos auxílios. Mas também existe um
+padrão sazonal todo ano: aperta em abril e maio, e alivia em dezembro com o 13º."*
+
+---
+
+## Slide 11 — 🎯 Núcleo B: o efeito defasado da Selic (0:30)
+
+### A Selic de hoje é o calote de dentro de 6 meses
+
+| Variável | Correlação com inadimplência |
+|----------|:---:|
+| Selic (mês corrente) | 0,527 |
+| Selic — 3 meses | 0,673 |
+| **Selic — 6 meses** | **0,774** |
+| Dólar (qualquer defasagem) | −0,21 a −0,28 (fraco) |
+
+- **Dólar** tem efeito **fraco e indireto** (via inflação → Selic)
+
+🎤 **Narração:** *"Este é o achado central da Parte B: a correlação com a Selic cresce
+conforme a defasagem aumenta, chegando a 0,77 com seis meses. Ou seja, quando o Banco
+Central sobe os juros hoje, o calote vai aparecer com força só dentro de seis meses — as
+famílias seguram as contas até esgotar as reservas. O dólar, por sua vez, tem efeito
+fraco e só indireto, via inflação."*
+
+---
+
+## Slide 12 — ARIMA: o que vem pela frente (0:25)
+
+### Série não-estacionária → diferenciada → projeção de alta
+
+- Teste **ADF**: série original **não-estacionária** (p = 0,272); diferenciada
+  **estacionária** (p = 0,036)
+- Modelo **ARIMA(1,1,1)**: coeficientes significativos, resíduos sem autocorrelação
+  (Ljung-Box p = 0,47)
+- **Forecast (6 meses): tendência de alta contínua**
+
+> *Figura sugerida:* gráfico de forecast ARIMA gerado em `notebooks/03_parte_b.ipynb`
+
+🎤 **Narração:** *"Como a série bruta tem tendência, diferenciamos para torná-la
+estacionária e ajustamos um ARIMA(1,1,1), que passou em todos os testes de qualidade. A
+projeção para os próximos seis meses aponta alta contínua — coerente com o efeito
+defasado da Selic que vimos no slide anterior: os juros altos do último semestre ainda vão
+pressionar o orçamento das famílias."*
+
+---
+
+## Slide 13 — Conclusão geral + encerramento (0:25)
+
+### Duas defasagens, um Brasil
+
+- **Parte A:** votar é obrigatório, mas **querer participar** depende da **escolaridade**
+  — não da região
+- **Parte B:** o calote de hoje reflete a **Selic de 6 meses atrás** — política monetária
+  tem efeito **lento**
+- **Limitações:** comparação ecológica (A) e modelo univariado (B) — caminhos para
+  trabalhos futuros
 
 # Obrigado!
 *Perguntas?*
 
-🎤 **Narração:** *"Por fim, duas ressalvas: a comparação é entre grupos, não indivíduos; e
-a amostra puxa para os mais escolarizados, então o desinteresse real deve ser ainda maior.
-Obrigado!"*
-
----
-
-> **Dicas de ensaio:**
-> - Cronometre: os slides 6 e 7 (o núcleo) merecem o maior tempo; corte detalhe dos slides
->   3–5 se estourar.
-> - Use **uma figura grande por slide** nos slides 4–8; deixe o texto curto.
-> - Frase de efeito para fechar a defesa: *"Votar é obrigatório; querer participar, não — e
->   é a escolaridade que faz a diferença."*
+🎤 **Narração:** *"Em ambas as partes, o que vemos hoje é reflexo de algo que vem de mais
+atrás: o nível educacional acumulado, no caso da democracia, e a política de juros de
+meses anteriores, no caso do crédito. Entender essas defasagens é essencial para políticas
+públicas mais eficazes. Obrigado!"*
