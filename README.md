@@ -574,3 +574,5 @@ Arquivos não versionados (ver `.gitignore`):
   - matplotlib;
   - seaborn;
   - statsmodels (decomposição sazonal, testes ADF e modelagem ARIMA — Parte B).
+
+---
