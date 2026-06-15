@@ -12,6 +12,9 @@
 
 ---
 
+> [!IMPORTANT]
+> **OBS:** O procedimento de EDA e seus resultados, como os gráficos por exemplo, estão mais evidentes ao decorrer dos notebooks do que nos relatórios. Destacamos também, que existem explicações ao decorrer do notebook explicando a parte visual.
+
 ## 1. Visão Geral
 
 Este repositório contém o desenvolvimento do **Projeto I — EDA (Exploratory Data Analysis)** da disciplina de **Ciência de Dados**, dividido em duas partes:
