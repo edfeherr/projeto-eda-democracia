@@ -7,7 +7,7 @@
 | Apresentação Final (Parte A + Parte B) | [reports/envios/Projeto_EDA_ Democracia_e_Inadimplência_Brasil.pdf](reports/envios/Projeto_EDA_%20Democracia_e_Inadimplência_Brasil.pdf) |
 | Relatório Final — Parte A (Democracia) | [reports/envios/relatorio_a.pdf](reports/envios/relatorio_a.pdf) |
 | Relatório Final — Parte B (Inadimplência) | [reports/envios/relatorio_b.pdf](reports/envios/relatorio_b.pdf) |
-| Vídeo | [reports/envios/](reports/envios/relatorio_b.pdf) |
+| Vídeo | [reports/envios/video_apresentacao.mp4](reports/envios/video_apresentacao.mp4) |
 
 ---
 
