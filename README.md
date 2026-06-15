@@ -8,6 +8,7 @@
 | Relatório Final — Parte A (Democracia) | [reports/envios/relatorio_a.pdf](reports/envios/relatorio_a.pdf) |
 | Relatório Final — Parte B (Inadimplência) | [reports/envios/relatorio_b.pdf](reports/envios/relatorio_b.pdf) |
 | Vídeo | [reports/envios/video_apresentacao.mp4](reports/envios/video_apresentacao.mp4) |
+| Vídeo | [Youtube] (https://youtu.be/LrEVTk61waM) |
 
 ---
 
